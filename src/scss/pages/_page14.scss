@@ -1,0 +1,99 @@
+@use 'sass:map';
+@use 'sass:math';
+
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+
+.page-14 {
+  .item2, .item3{
+    position: relative;
+  }
+  .item2{
+    .gh-img{
+      bottom: 1787px;
+      left: 268px;
+      clip-path: inset(100% 0 0 0);
+      .imgover{
+        width: 1647px;
+        height: 684px;
+        img{
+          height: 684px;
+        }
+      }
+    }
+  }
+  .item3{
+    .gh-img{
+      bottom: 483px;
+      left: 444px;
+      clip-path: inset(0 100% 0 0);
+      .imgover{
+        width: 1351px;
+        height: 540px;
+        img{
+          height: 540px;
+        }
+      }
+    }
+  }
+  .gh-img{
+      position: absolute;
+      overflow: hidden;
+      
+      z-index:2;
+      
+      .imgover{
+          position: relative;
+          img{
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              
+          }
+      }
+  }
+}
+
+.swiper-slide-active{
+  .page-14{
+    .item2{
+      .gh-img{
+        transition: all 3s 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+        clip-path: inset(0 0 0 0); // 점점 보여짐
+      }
+    }
+    .item3{
+      .gh-img{
+        transition: all 3s 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+        clip-path: inset(0 0 0 0); // 점점 보여짐
+      }
+    }
+  }
+}
+
+
+.page-14 {
+  .p-title {top:189px;left:100px}
+  .cont1 {top:354px;left:111px}
+  .cont2 {top:1520px;left:110px}
+  .cont3 {top:1786px;left:126px}
+  .cont4 {top:2000px;left:126px}
+  .cont5 {top:2464px;left:126px}
+  .dot {position:absolute;bottom:94px;left:973px}
+  
+}
+
+.swiper-slide-active{
+  .page-14 {
+    .ani-default {
+      &.p-title {transform: translateY(0px);opacity: 1;}
+      &.cont1 {transform: translateY(0px);opacity: 1;transition-delay: 0.2s;}
+      &.cont2 {transform: translateY(0px);opacity: 1;transition-delay: 0.4s;}
+      &.cont3 {transform: translateY(0px);opacity: 1;transition-delay: 0.6s;}
+      &.cont4 {transform: translateY(0px);opacity: 1;transition-delay: 0.8s;}
+      &.cont5 {transform: translateY(0px);opacity: 1;transition-delay: 1s;}
+    } 
+  }
+}

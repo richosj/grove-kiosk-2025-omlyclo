@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=2160, height=3840, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The 1st Omlyclo</title>
+    <link rel="stylesheet" href="/scss/main.scss">
+</head>
+
+<body>
+    
+    <div class="kiosk">
+        {{> nav}}
+
+        <div class="popup1 popup">
+            <div class="popup-content">
+                <img src="/assets/page2/layer_cont1.png" alt="">
+                <button class="btn-close"><img src="/assets/images/btn-close.png" alt=""></button>
+            </div>
+            <div class="overlay"></div>
+        </div>
+        <div class="popup2 popup">
+            <div class="popup-content">
+                <img src="/assets/page4/layer2_cont1.png" alt="">
+                <button class="btn-close"><img src="/assets/images/btn-close.png" alt=""></button>
+            </div>
+            <div class="overlay"></div>
+        </div>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="slide1 swiper-slide" aria-label="1 페이지">
+                    {{> page1}}
+                </div>
+                <div class="swiper-slide" aria-label="2 페이지">
+                    {{> page2}}
+                </div>
+                <div class="swiper-slide" aria-label="2 페이지">
+                    <div class="background">
+                        {{> page3}}
+                    </div>
+                </div>
+                <div class="swiper-slide" aria-label="3 페이지">
+                    <div class="background">
+                        {{> page4}}
+                    </div>
+                </div>
+                <div class="swiper-slide" aria-label="4 페이지">
+                    <div class="background">
+                        {{> page5}}
+                    </div>
+                </div>
+                <div class="swiper-slide" aria-label="5 페이지">
+                    <div class="background">
+                        {{> page6}}
+                    </div>
+                </div>
+                <div class="swiper-slide" aria-label="6 페이지">
+                    <div class="background">
+                        {{> page7}}
+                    </div>
+                </div>
+                <div class="swiper-slide" aria-label="7 페이지">
+                    <div class="background">
+                        {{> page8}}
+                    </div>
+                </div>
+                <div class="swiper-slide" aria-label="8 페이지">
+                    <div class="background">
+                        {{> page9}}
+                    </div>
+                </div>
+                <div class="swiper-slide" aria-label="9 페이지">
+                    <div class="background">
+                        {{> page10}}
+                    </div>
+                </div>
+                <div class="swiper-slide" aria-label="10 페이지">
+                    <div class="background">
+                        {{> page11}}
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="swiper-pagination"></div> -->
+        </div>
+
+        <div class="kiosk-footer">
+            <img src="/assets/images/footer.jpg">
+        </div>
+    </div>
+
+    <script src="/js/main.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        //const menuButton = document.getElementById('menuButton');
+        const nav = document.getElementById('nav');
+        
+        const swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        pagination: { el: '.swiper-pagination', clickable: true },
+        autoHeight : true,
+        initialSlide: 0,
+        on: {
+            init() {
+                setTimeout(function(){
+                    document.querySelector('.intro').classList.add('init')
+                },1000)
+                
+                // 초기 슬라이드 클래스 설정 (현재 활성 슬라이드 기준)
+                updateBodyStageClass(this.realIndex);
+            },
+            slideChange() {
+                //menuButton.classList.remove('on');
+                nav.classList.remove('show');
+                
+                // 현재 슬라이드 인덱스에 맞는 body 클래스 업데이트
+                updateBodyStageClass(this.realIndex);
+                
+                // 스크롤을 맨 위로 이동
+                window.scrollTo(0, 0);
+            },
+            slideChangeTransitionEnd: function () {
+                // 현재 활성 슬라이드 index
+                const activeIndex = this.realIndex;
+
+                // 두 번째 슬라이드만 애니메이션 재시작
+                if (activeIndex === 1) {
+                startAnimationsWithDelay();
+                } else {
+                stopAnimations();
+                }
+            }
+
+        }
+        });
+
+        // body에 stage 클래스를 업데이트하는 함수
+        function updateBodyStageClass(slideIndex) {
+            const body = document.body;
+            
+            // 기존의 모든 stage-* 클래스 제거
+            const existingStageClasses = body.className.match(/stage-\d+/g);
+            if (existingStageClasses) {
+                existingStageClasses.forEach(className => {
+                    body.classList.remove(className);
+                });
+            }
+            
+            // 새로운 stage 클래스 추가
+            body.classList.add(`stage-${slideIndex}`);
+        }
+
+        function startAnimationsWithDelay() {
+            // 3초 동안 정지
+            stopAnimations();
+
+            // 3초 뒤에 애니메이션 다시 시작
+            setTimeout(() => {
+            const first = document.querySelector('.tev_home_hand_box_first');
+            
+            const third = document.querySelector('.tev_home_hand_box_third');
+            const circle = third.querySelector('.circle');
+
+            first.style.animation = '';
+            first.style.webkitAnimation = '';
+            third.style.animation = '';
+            third.style.webkitAnimation = '';
+            circle.style.animation = '';
+            circle.style.webkitAnimation = '';
+            }, 2000);
+        }
+
+        function stopAnimations() {
+            const first = document.querySelector('.tev_home_hand_box_first');
+            
+            const third = document.querySelector('.tev_home_hand_box_third');
+            const circle = third.querySelector('.circle');
+
+            first.style.animation = 'none';
+            first.style.webkitAnimation = 'none';
+            third.style.animation = 'none';
+            third.style.webkitAnimation = 'none';
+            circle.style.animation = 'none';
+            circle.style.webkitAnimation = 'none';
+        }
+
+        document.querySelectorAll('.g1').forEach(element => {
+            element.addEventListener('click', () => {
+                swiper.slideTo(1);
+            });
+        });
+        
+        document.querySelectorAll('.g2').forEach(element => {
+            element.addEventListener('click', () => {
+                swiper.slideTo(2);
+            });
+        });
+
+        document.querySelectorAll('.g5').forEach(element => {
+            element.addEventListener('click', () => {
+                swiper.slideTo(4);
+            });
+        });
+        document.querySelectorAll('.g6').forEach(element => {
+            element.addEventListener('click', () => {
+                swiper.slideTo(5);
+            });
+        });
+        document.querySelectorAll('.g7').forEach(element => {
+            element.addEventListener('click', () => {
+                swiper.slideTo(6);
+            });
+        });
+
+        document.querySelectorAll('.g8').forEach(element => {
+            element.addEventListener('click', () => {
+                swiper.slideTo(7);
+            });
+        });
+
+        document.querySelectorAll('.g9').forEach(element => {
+            element.addEventListener('click', () => {
+                swiper.slideTo(8);
+            });
+        });
+
+        document.querySelectorAll('.g10').forEach(element => {
+            element.addEventListener('click', () => {
+                swiper.slideTo(9);
+            });
+        });
+        
+
+        document.querySelector('.btn-intro1')?.addEventListener('click', () => {
+            swiper.slideTo(1)
+        });
+        document.querySelector('.btn-intro2')?.addEventListener('click', () => {
+            swiper.slideTo(11)
+        });
+
+        document.querySelector('.menu-item-0')?.addEventListener('click', () => {
+            swiper.slideTo(0)
+        });
+
+        document.querySelector('.menu-item-1')?.addEventListener('click', () => {
+            // Item 1 동작
+            swiper.slideTo(1)
+        });
+
+        document.querySelector('.menu-item-2')?.addEventListener('click', () => {
+            // Item 2 동작
+            swiper.slideTo(3)
+        });
+
+        document.querySelector('.menu-item-3')?.addEventListener('click', () => {
+        // Item 3 동작
+        swiper.slideTo(4)
+        });
+
+        document.querySelector('.menu-item-4')?.addEventListener('click', () => {
+        // Item 4 동작
+        swiper.slideTo(7)
+        });
+
+
+
+        document.querySelector('.menu2-item-0')?.addEventListener('click', () => {
+        // 2 - Item 0 동작
+            swiper.slideTo(0)
+        });
+
+        document.querySelector('.menu2-item-1')?.addEventListener('click', () => {
+        // 2 - Item 1 동작
+            swiper.slideTo(12)
+        });
+
+        document.querySelector('.menu2-item-2')?.addEventListener('click', () => {
+        // 2 - Item 2 동작
+            swiper.slideTo(13)
+        });
+
+        document.querySelector('.menu2-item-3')?.addEventListener('click', () => {
+        // 2 - Item 3 동작
+            swiper.slideTo(14)
+        });
+
+        document.querySelector('.menu2-item-4')?.addEventListener('click', () => {
+        // 2 - Item 4 동작
+            swiper.slideTo(15)
+        });
+
+        
+        // 각 페이지의 paging 버튼 클릭 이벤트 추가
+        document.querySelectorAll('.swiper-slide').forEach((slide, slideIndex) => {
+            slide.querySelectorAll('.paging button').forEach((button, buttonIndex) => {
+                button.addEventListener('click', () => {
+                    swiper.slideTo(buttonIndex + 3);
+                });
+            });
+        });
+
+        // menuButton.addEventListener('click', () => {
+        //     menuButton.classList.toggle('on');
+        //     nav.classList.toggle('show');
+        // });
+
+        document.querySelector('#popup-button2')?.addEventListener('click', () => {
+            document.querySelector('.popup2').classList.toggle('show');
+        });
+
+        document.querySelector('#popup-button1')?.addEventListener('click', () => {
+            document.querySelector('.popup1').classList.toggle('show');
+        });
+
+        document.querySelector('.popup2')?.addEventListener('click', () => {
+            document.querySelector('.popup2').classList.remove('show');
+        });
+        document.querySelector('.popup1')?.addEventListener('click', () => {
+            document.querySelector('.popup1').classList.remove('show');
+        });
+    });
+
+</script>
+</body>
+
+</html>

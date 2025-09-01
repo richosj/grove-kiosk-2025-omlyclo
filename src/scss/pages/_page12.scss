@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use 'sass:math';
+
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+
+
+
+.page-12 {
+  .p-title {top:118px;left:100px}
+  .cont1 {top:355px;left:111px}
+  .cont2 {top:1314px;left:111px}
+  .cont3 {top:2220px;left:112px}
+  .dot {position:absolute;bottom:94px;left:973px}
+  
+}
+
+.swiper-slide-active{
+  .page-12 {
+    .ani-default {
+      &.p-title {transform: translateY(0px);opacity: 1;}
+      &.cont1 {transform: translateY(0px);opacity: 1;transition-delay: 0.2s;}
+      &.cont2 {transform: translateY(0px);opacity: 1;transition-delay: 0.4s;}
+      &.cont3 {transform: translateY(0px);opacity: 1;transition-delay: 0.6s;}
+    } 
+  }
+}

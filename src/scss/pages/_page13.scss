@@ -1,0 +1,97 @@
+@use 'sass:map';
+@use 'sass:math';
+
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+
+.page-13 {
+  .item2, .item3{
+    position: relative;
+  }
+  .item2{
+    .gh-img{
+      bottom: 1635px;
+      left: 263px;
+      .imgover{
+        width: 1658px;
+        height: 534px;
+        img{
+          height: 534px;
+        }
+      }
+    }
+  }
+  .item3{
+    .gh-img{
+      bottom: 664px;
+      left: 254px;
+      .imgover{
+        width: 1848px;
+        height: 595px;
+        img{
+          height: 595px;
+        }
+      }
+    }
+  }
+  .gh-img{
+      position: absolute;
+      overflow: hidden;
+      clip-path: inset(0 100% 0 0);
+      z-index:2;
+      
+      .imgover{
+          position: relative;
+          img{
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              
+          }
+      }
+  }
+}
+
+.swiper-slide-active{
+  .page-13{
+    .item2{
+      .gh-img{
+        transition: all 3s 1.2s cubic-bezier(0.33, 1, 0.68, 1);
+        clip-path: inset(0 0 0 0); // 점점 보여짐
+      }
+    }
+    .item3{
+      .gh-img{
+        transition: all 3s 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+        clip-path: inset(0 0 0 0); // 점점 보여짐
+      }
+    }
+  }
+}
+
+
+.page-13 {
+  .p-title {top:189px;left:100px}
+  .cont1 {top:385px;left:126px}
+  .cont2 {top:712px;left:126px}
+  .cont3 {top:1786px;left:126px}
+  .cont4 {top:2000px;left:126px}
+  .cont5 {top:2464px;left:126px}
+  .dot {position:absolute;bottom:94px;left:973px}
+  
+}
+
+.swiper-slide-active{
+  .page-13 {
+    .ani-default {
+      &.p-title {transform: translateY(0px);opacity: 1;}
+      &.cont1 {transform: translateY(0px);opacity: 1;transition-delay: 0.2s;}
+      &.cont2 {transform: translateY(0px);opacity: 1;transition-delay: 0.4s;}
+      &.cont3 {transform: translateY(0px);opacity: 1;transition-delay: 0.6s;}
+      &.cont4 {transform: translateY(0px);opacity: 1;transition-delay: 0.8s;}
+      &.cont5 {transform: translateY(0px);opacity: 1;transition-delay: 1s;}
+    } 
+  }
+}

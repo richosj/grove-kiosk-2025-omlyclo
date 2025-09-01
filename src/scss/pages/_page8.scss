@@ -1,0 +1,93 @@
+@use 'sass:map';
+@use 'sass:math';
+
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+.page-8 {
+  .item2, .item3{
+    position: relative;
+    z-index: 5
+  }
+  .item2{
+    .gh-img{
+      bottom: 1860px;
+      left: 256px;
+      .imgover{
+        width: 1732px;
+        height: 462px;
+        img{
+          height: 462px;
+        }
+      }
+    }
+  }
+  .item3{
+    .gh-img{
+      bottom: 845px;
+      left: 256px;
+      .imgover{
+        width: 1732px;
+        height: 437px;
+        img{
+          height: 437px;
+        }
+      }
+    }
+  }
+  .gh-img{
+      position: absolute;
+      overflow: hidden;
+      clip-path: inset(0 100% 0 0);
+      
+      .imgover{
+          position: relative;
+          img{
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              
+          }
+      }
+  }
+}
+
+.swiper-slide-active{
+  .page-8{
+    .item2{
+      .gh-img{
+        transition: all 3s 1s cubic-bezier(0.33, 1, 0.68, 1);
+        clip-path: inset(0 0 0 0); // 점점 보여짐
+      }
+    }
+    .item3{
+      .gh-img{
+        transition: all 3s 1s cubic-bezier(0.33, 1, 0.68, 1);
+        clip-path: inset(0 0 0 0); // 점점 보여짐
+      }
+    }
+  }
+}
+
+
+
+.page-8 {
+  .p-title {top:102px;left:100px}
+  .cont1 {top:309px;left:100px}
+  .cont2 {top:700px;left:100px}
+  .cont3 {top:2894px;left:100px}
+  .dot {position:absolute;bottom:94px;left:973px}
+  
+}
+
+.swiper-slide-active{
+  .page-8 {
+    .ani-default {transition: all 1s;
+      &.p-title {transform: translateY(0px);opacity: 1;}
+      &.cont1 {transform: translateY(0px);opacity: 1;transition-delay: 0.2s;}
+      &.cont2 {transform: translateY(0px);opacity: 1;transition-delay: 0.4s;}
+      &.cont3 {transform: translateY(0px);opacity: 1;transition-delay: 0.6s;}
+    } 
+  }
+}

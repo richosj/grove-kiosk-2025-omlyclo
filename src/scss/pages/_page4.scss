@@ -1,0 +1,38 @@
+@use 'sass:map';
+@use 'sass:math';
+
+@use '../utils/variables' as *;
+@use '../utils/functions' as *;
+@use '../utils/mixins' as *;
+
+
+
+
+
+.page-4 {
+  .p-title {top:102px;left:100px}
+  .cont1 {top:273px;left:100px}
+  .cont2 {top:776px;left:100px}
+  .cont2_box {top:1243px;left:100px}
+  .cont3 {bottom:638px;left:100px}
+  .cont4 {bottom:64px;left:100px}
+  
+  .dot {position:absolute;bottom:94px;left:973px}
+  .popup-button {position: absolute;top:265px;right:61px;}
+}
+
+.swiper-slide-active{
+  .page-4 {
+    .ani-default {transition: all 1s;
+      &.p-title {transform: translateY(0px);opacity: 1;}
+      &.cont1 {transform: translateY(0px);opacity: 1;transition-delay: 0.2s;}
+      &.cont2 {transform: translateY(0px);opacity: 1;transition-delay: 0.4s;}
+      &.cont2_box {transform: translateY(0px);opacity: 1;transition-delay: 0.6s;}
+      &.cont3 {transform: translateY(0px);opacity: 1;transition-delay: 0.8s;}
+      &.cont4 {transform: translateY(0px);opacity: 1;transition-delay: 1s;}
+      &.cont5 {transform: translateY(0px);opacity: 1;transition-delay: 1.2s;
+        .tev_home_hand_box_first {opacity: 1;transform: scale(120%);}
+      }
+    } 
+  }
+}
