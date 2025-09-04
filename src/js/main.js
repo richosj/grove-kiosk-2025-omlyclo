@@ -1,2 +1,2 @@
 //import 'animate.css';
-i//mport '../scss/main.scss';
+//import '../scss/main.scss';

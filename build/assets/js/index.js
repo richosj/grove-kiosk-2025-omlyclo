@@ -35,4 +35,3 @@
     fetch(link.href, fetchOpts);
   }
 })();
-i;

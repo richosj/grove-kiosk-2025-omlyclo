@@ -1098,21 +1098,22 @@ body.stage-9 .menu-item-4 {
   */
 }
 
-.stage-10 #nav {
-  display: none;
-}
-
 .page-1 .p-title {
   top: 123px;
   left: 108px;
 }
-.page-1 .cont1 {
+.page-1 .cont1s {
   top: 171px;
   left: 159px;
+  position: absolute;
 }
-.page-1 .cont2 {
+.page-1 .cont4 {
   bottom: 36px;
   left: 83px;
+}
+.page-1 .cont1s > span {
+  display: block;
+  position: relative;
 }
 
 .swiper-slide-active .page-1 .ani-default {
@@ -1135,7 +1136,12 @@ body.stage-9 .menu-item-4 {
 .swiper-slide-active .page-1 .ani-default.cont3 {
   transform: translateY(0px);
   opacity: 1;
-  transition-delay: 0.6s;
+  transition-delay: 0.95s;
+}
+.swiper-slide-active .page-1 .ani-default.cont4 {
+  transform: translateY(0px);
+  opacity: 1;
+  transition-delay: 1.25s;
 }
 
 .tev_home_hand_box {

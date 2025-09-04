@@ -8,8 +8,9 @@
 
 .page-1 {
   .p-title {top:123px;left:108px}
-  .cont1 {top:171px;left:159px}
-  .cont2 {bottom:36px;left:83px}
+  .cont1s {top:171px;left:159px;position: absolute;}
+  .cont4 {bottom:36px;left:83px}
+  .cont1s > span{display: block;position: relative;}
 }
 
 .swiper-slide-active{
@@ -18,7 +19,8 @@
       &.p-title {transform: translateY(0px);opacity: 1;}
       &.cont1 {transform: translateY(0px);opacity: 1;transition-delay: 0.35s;}
       &.cont2 {transform: translateY(0px);opacity: 1;transition-delay: 0.65s;}
-      &.cont3 {transform: translateY(0px);opacity: 1;transition-delay: 0.6s;}
+      &.cont3 {transform: translateY(0px);opacity: 1;transition-delay: 0.95s;}
+      &.cont4 {transform: translateY(0px);opacity: 1;transition-delay: 1.25s;}
     } 
   }
 }
