@@ -973,15 +973,16 @@ body.stage-11 .img-footer-txt2 {
   position: relative;
   display: flex;
   width: 100%;
-  height: 175px;
+  height: 174px;
   align-items: end;
   touch-action: none;
   z-index: 10;
+  background: url(../../assets/menu/menu.png);
 }
 
 .menu-item, .menu2-item {
   font-size: 0;
-  height: 175px;
+  height: 174px;
   transition: all 0.3s ease-out;
   cursor: pointer;
 }
@@ -1030,54 +1031,56 @@ body.stage-15 .menu-item {
 }
 
 .menu-item-0 {
-  width: 250px;
-  height: 175px;
-  background: url(../../assets/menu/0.png) no-repeat 50% 100%;
+  width: 261px;
+  height: 174px;
 }
 
 .menu-item-1 {
-  width: 499px;
-  height: 175px;
-  background: url(../../assets/menu/1.png) no-repeat 50% 100%;
+  width: 440px;
+  height: 174px;
+  background: none;
+  margin-right: 31px;
 }
 
 body.stage-1 .menu-item-1,
 body.stage-2 .menu-item-1 {
-  background: url(../../assets/menu/1_on.png) no-repeat 50% 100%;
+  background-image: url(../../assets/menu/on_1.png);
 }
 
 .menu-item-2 {
   width: 441px;
-  height: 175px;
-  background: url(../../assets/menu/2.png) no-repeat 50% 100%;
+  height: 174px;
+  margin-right: 31px;
+  background: none;
 }
 
 body.stage-3 .menu-item-2 {
-  background: url(../../assets/menu/2_on.png) no-repeat 50% 100%;
+  background: url(../../assets/menu/on_2.png) no-repeat 50% 100%;
 }
 
 .menu-item-3 {
-  width: 501px;
-  height: 175px;
-  background: url(../../assets/menu/3.png) no-repeat 50% 100%;
+  width: 440px;
+  height: 174px;
+  background: none;
+  margin-right: 31px;
 }
 
 body.stage-4 .menu-item-3,
 body.stage-5 .menu-item-3,
 body.stage-6 .menu-item-3 {
-  background: url(../../assets/menu/3_on.png) no-repeat 50% 100%;
+  background: url(../../assets/menu/on_3.png) no-repeat 50% 100%;
 }
 
 .menu-item-4 {
-  width: 469px;
-  height: 175px;
-  background: url(../../assets/menu/4.png) no-repeat 50% 100%;
+  width: 440px;
+  height: 174px;
+  background: url(/assets/menu/4.png) no-repeat 50% 100%;
 }
 
 body.stage-7 .menu-item-4,
 body.stage-8 .menu-item-4,
 body.stage-9 .menu-item-4 {
-  background: url(../../assets/menu/4_on.png) no-repeat 50% 100%;
+  background: url(../../assets/menu/on_4.png) no-repeat 50% 100%;
 }
 
 .wrap-dot-g {
